@@ -7,15 +7,46 @@
     <title>Lotta</title>
 
     <style>
+
+        .container {
+            min-height: 100vh;
+        }
+
         .main {
+            flex: 1;
+        }
+
+        .lott {
             font-family: 'Times New Roman', sans-serif;
             color: rgb(92, 206, 221);
         }
 
-        body {
+        html, body {
+            height: 700px;
             background: linear-gradient(to bottom, #dd7826, powderblue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cit {
+            font-family: 'Marck Script', sans-serif;
+        }
+
+        .end {
+            text-align: center;
+            padding: 10px;
         }
         
+        .Th {
+            color:#dd7826;
+            font-family: 'Century Gothic', 'Times New Roman', sans-serif;
+            font-size: large;
+        }
+
+        .pages {
+            color:rgb(39, 131, 143);
+        }
+
         a.page {
             color:rgb(6, 155, 6);
             text-decoration: none;
@@ -26,41 +57,34 @@
             text-decoration:underline;
         }
 
-        .pages {
-            color:rgb(39, 131, 143);
-        }
-
-        .end {
-            color:#dd7826;
-            font-family: 'Century Gothic', 'Times New Roman', sans-serif;
-        }
-
-        .cit {
-            font-family: 'Marck Script', sans-serif;
-        }
-
     </style>
 </head>
 <body>
-    <h1 class="main">Lott</h1>
+    <div class="main">
+        <h1 class="lott">Lott</h1>
 
-    <blockquote class="cit">
-        <p> <i>И если бы тебя на свете не бывало,, <br>
-            В тебя бы был влюблён,, как в образ твой прекрасный.. <br>
-            Глаза твои слепят,, но слепоты мне мало.. <br>
-            Пред образом силён,, но пред тобой -- безвластен..</i>
+        <blockquote class="cit">
+            <p> <i>И если бы тебя на свете не бывало,, <br>
+                В тебя бы был влюблён,, как в образ твой прекрасный.. <br>
+                Глаза твои слепят,, но слепоты мне мало.. <br>
+                Пред образом силён,, но пред тобой -- безвластен..</i>
+            </p>
+            <div style="padding: 0px 360px;"> <b>2021</b> </div>
+        </blockquote>    
+    </div>
+    
+    <!--<div style="height: 468px;"></div>-->
+
+    <div class="end">
+        <hr>
+        <p>
+            <span class="Th"><b>Темы</b></span> <br>
+            <ul class="pages">
+                <li><a class = "page" href="https://pollottence42.github.io/">Простите</a>
+                    (захочешь вернуться -- в родную обитель)</li>
+                <li><a href="lkey=z9gkfc3bp29rg1tjzgva7impf&st=8mckxdk1&dl=0" download="СЖИ">СЖИ</a></li>
+            </ul>
         </p>
-        <div style="padding: 0px 360px;"> <b>2021</b> </div>
-    </blockquote>
-
-    <div style="height: 468px;"></div>
-
-    <hr>
-    <h3 class="end">Темы</h3>
-    <p>
-        <ul class="pages">
-            <li><a class = "page" href="https://pollottence42.github.io/">Простите</a> (захочешь вернуться -- в родную обитель)</li>
-        </ul>
-    </p>
+    </div>
 </body>
 </html>
