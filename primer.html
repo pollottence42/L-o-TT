@@ -84,7 +84,7 @@
         <iframe class="scroll" src="bottom.html"
         frameborder="0"
         width="100%"
-        height="180"
+        height="300"
         ></iframe>
 
         <script>
@@ -92,17 +92,15 @@
                 const scrollIframe = document.querySelector('.scroll');
                 if (scrollIframe) {
                     if (window.innerWidth > 600) {
-                        scrollIframe.setAttribute('scrolling', 'no'); // Устанавливаем атрибут
+                        scrollIframe.setAttribute('scrolling', 'no');
                     } else {
-                        scrollIframe.removeAttribute('scrolling'); // Удаляем атрибут, если ширина меньше или равна 600px
+                        scrollIframe.removeAttribute('scrolling');
                     }
                 }
             }
     
-            // Выполняем при загрузке страницы
             updateScrollingAttribute();
     
-            // Обновляем при изменении размера окна
             window.addEventListener('resize', updateScrollingAttribute);
         </script>
     </div>

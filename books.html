@@ -81,11 +81,28 @@
     </div>
     
     <div class="end">
-        <iframe src="bottom.html"
+        <iframe class="scroll" src="bottom.html"
         frameborder="0"
         width="100%"
-        height="250"
+        height="300"
         ></iframe>
+
+        <script>
+            function updateScrollingAttribute() {
+                const scrollIframe = document.querySelector('.scroll');
+                if (scrollIframe) {
+                    if (window.innerWidth > 600) {
+                        scrollIframe.setAttribute('scrolling', 'no');
+                    } else {
+                        scrollIframe.removeAttribute('scrolling');
+                    }
+                }
+            }
+    
+            updateScrollingAttribute();
+    
+            window.addEventListener('resize', updateScrollingAttribute);
+        </script>
     </div>
 </body>
 </html>
