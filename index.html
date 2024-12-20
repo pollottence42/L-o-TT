@@ -8,21 +8,21 @@
     <title>Lotta</title>
 
     <style>
-
-        .container {
-            min-height: 100vh;
-        }
-
-        .main {
-            flex: 1;
-        }
-
         html, body {
             background: linear-gradient(to bottom, #dd7826, powderblue);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
+        }
+        
+        .container {
+            min-height: 100vh;
+        }
+
+        .top {
+            flex: 1;
+            padding-left: 42px;
         }
 
         .lott {
@@ -32,7 +32,14 @@
 
         .cit {
             font-family: 'Marck Script', sans-serif;
-            color: white;
+            color:bisque;
+        }
+
+        .main {
+            padding-left: 42px;
+            flex: 16;
+
+            color:rgb(216, 221, 168);
         }
 
         .end {
@@ -47,9 +54,9 @@
 
         .pages {
             color:rgb(39, 131, 143);
-            padding-left: 33%; /* Отступы для маркеров списка */
+            padding-left: 33%;
             text-align: left;
-            list-style-position: inside; /* Помещаем маркеры внутри элемента списка */
+            list-style-position: inside;
         }
 
         a.page {
@@ -65,7 +72,7 @@
     </style>
 </head>
 <body>
-    <div class="main">
+    <div class="top">
         <h1 class="lott">Lott</h1>
 
         <blockquote class="cit">
@@ -75,13 +82,18 @@
                 Пред образом силён,, но пред тобой -- безвластен..</i>
             </p>
             <div style="padding: 0px 360px;"> <b>2021</b> </div>
-        </blockquote>    
+        </blockquote>
+    </div>
+
+    <div class = "main">
+        <p>✨✨✨✨✨✨</p>
+        <p>&nbsp;Доброго времени</p>
+        <p>✨✨✨✨✨✨</p>
     </div>
     
     <div class="end">
         <hr>
         <p>
-            <!-- <span class="Th"><b>&nbsp;&nbsp;&nbsp;&nbsp;Темы</b></span> <br> -->
             <ul type = "circle"  class="pages">
                 <lh class="Th"><b>Темы</b> <br> &nbsp;</lh>
                 <li><a class = "page" href="https://pollottence42.github.io/">Простите</a>
