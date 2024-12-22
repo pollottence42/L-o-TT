@@ -58,13 +58,25 @@
             text-decoration: underline;
         }
 
-        a.link {
+        a.linkcomp {
             color: rgb(255, 255, 255);
             font-weight: bold;
             text-decoration: none;
         }
 
-        a.link:hover {
+        a.linkcomp:hover {
+            color:black;
+            text-decoration: underline;
+        }
+
+        
+        a.linktel {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.linktel:hover {
             color:black;
             text-decoration: underline;
         }
@@ -125,7 +137,8 @@
 
                 <div>&nbsp;</div>
 
-                <a class="link" href="pol.html">Читать на сайте</a> (увы,, только с компьютера)
+                <a class="linkcomp" href="pol.html">Читать на сайте</a> <br>
+                <a class="linktel" href="poltel.html">Читать на сайте</a>
 
                 <div>&nbsp;</div>
 
@@ -187,6 +200,26 @@
     
             window.addEventListener('resize', updateScrollingAttribute);
         </script>
+
+        
+    <script>
+        const desktopLink = document.querySelector('.linkcomp');
+        const mobileLink = document.querySelector('.linktel');
+
+        function updateLinks() {
+            if (window.innerWidth > 768) {
+                desktopLink.style.display = 'block';
+                mobileLink.style.display = 'none';
+            } else {
+                desktopLink.style.display = 'none';
+                mobileLink.style.display = 'block';
+            }
+        }
+
+        updateLinks();
+
+        window.addEventListener('resize', updateLinks);
+    </script>
     </div>
 </body>
 </html>
