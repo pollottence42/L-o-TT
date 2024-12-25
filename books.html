@@ -111,8 +111,15 @@
                 <li>Напечатан и стал продаваться 3 декабря 2023 года</li>
                 <li>СЖИ -- моя история с уже далёкого 2017 года по конец 2022,,<br>
                     все мои переживания,, метаморфозы,, страхи и интересы</li>
-                <li><a class = "sbr" href="https://dl.dropboxusercontent.com/scl/fi/0nxpv1bs587neixwc69ko/.pdf?rlkey=z9gkfc3bp29rg1tjzgva7impf&st=6yal0ayu&dl=0" download="СЖИ">Весь я -- здесь</a></li>
-                <img class="image" src="image/sobor.jpg" alt="Обложка Сборника Живых Историй" height="42%" width="42%">
+                    <li><a class = "sbr" href="https://dl.dropboxusercontent.com/scl/fi/0nxpv1bs587neixwc69ko/.pdf?rlkey=z9gkfc3bp29rg1tjzgva7impf&st=6yal0ayu&dl=0" download="СЖИ">Весь я -- здесь</a></li>
+                    <br>
+
+                    <div class="linkcomp">
+                    <embed src="image\sobor.pdf" type="application/pdf" height="600" width="80%">
+                </div>
+                
+
+                <img class="linktel" class="image" src="image/sobor.jpg" alt="Обложка Сборника Живых Историй" height="90%" width="90%">
                 <div>&nbsp;</div>
             </ul>
         </p>
@@ -144,6 +151,25 @@
     
             window.addEventListener('resize', updateScrollingAttribute);
         </script>
+
+<script>
+    const desktopLink = document.querySelector('.linkcomp');
+    const mobileLink = document.querySelector('.linktel');
+
+    function updateLinks() {
+        if (window.innerWidth > 768) {
+            desktopLink.style.display = 'block';
+            mobileLink.style.display = 'none';
+        } else {
+            desktopLink.style.display = 'none';
+            mobileLink.style.display = 'block';
+        }
+    }
+
+    updateLinks();
+
+    window.addEventListener('resize', updateLinks);
+</script>
     </div>
 </body>
 </html>

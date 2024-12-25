@@ -49,6 +49,28 @@
             color:rgb(0, 0, 0);
         }
 
+        .top {
+            color: rgb(0, 0, 0);
+        }
+
+        .dnd {
+            color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(255, 255, 255);
+        }
+
+        a.lottafile {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.lottafile:hover {
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+        }
+
         .end {
             padding: 10px;
         }
@@ -68,7 +90,29 @@
     </header>
 
     <div class="main">
-        <p>Здесь будет контент по D&D</p>
+        <p class="top">
+            Моё стихотворное полнится всяким,, пока что опубликован единственный сборник
+        </p>
+
+        <p>
+            <ul type="circle" class="dnd">
+                <br>
+                <lh><b class="name">Руководство по <i>Лотте</i></b></lh>
+                <br>
+                <br>
+                <li>Лотта -- мир,, который я использую в своих приключениях
+                <li>Он удобен,, в меру обычен,, в меру нет</li>
+                <li>Этот файл -- основная информация по Лотте</li>
+                <br>
+                <div class="linkcomp">
+                    <embed src="image\lotta.pdf" type="application/pdf" height="600" width="80%">
+                        <br>
+                        <br>
+                </div>
+                <li><a class = "lottafile" href="https://dl.dropboxusercontent.com/scl/fi/bxltfil1r52jle4fimdsa/_-_.pdf?rlkey=dwpa2hnkbm9kwkluvjocesp8t&st=6cez4w1l&dl=0" download="Lotta">Скачать файл</a></li>
+                <br>
+            </ul>
+        </p>
     </div>
     
     <div class="end">
@@ -95,6 +139,22 @@
     
             window.addEventListener('resize', updateScrollingAttribute);
         </script>
+
+<script>
+    const desktopLink = document.querySelector('.linkcomp');
+
+    function updateLinks() {
+        if (window.innerWidth > 768) {
+            desktopLink.style.display = 'block';
+        } else {
+            desktopLink.style.display = 'none';
+        }
+    }
+
+    updateLinks();
+
+    window.addEventListener('resize', updateLinks);
+</script>
     </div>
 </body>
 </html>

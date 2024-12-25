@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta lang="ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="stars.ico" type="image/x-icon">
+    <title>D&D</title>
+</head>
+
+<style>
+    html, body {
+            background: linear-gradient(to bottom, #dd7826, powderblue);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            position:fixed;
+        }
+        
+        .container {
+            min-height: 100vh;
+        }
+
+        .lott {
+            font-family: 'Century Gothic', sans-serif;
+            color: rgb(101, 226, 243);
+        }
+
+        h1 a {
+            color: rgb(101, 226, 242);
+            text-decoration: none;
+        }
+
+        h1 a:hover {
+            color:white;
+            text-decoration: none;
+        }
+
+        .main {
+            padding-top: 84px;
+            padding-left: 100px;
+            flex: 16;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: large;
+            color:rgb(0, 0, 0);
+        }
+
+        .top {
+            color: rgb(0, 0, 0);
+        }
+
+        .dnd {
+            color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(255, 255, 255);
+        }
+
+        .end {
+            padding: 10px;
+        }
+
+        a.home {
+            font-size:x-large;
+            color:rgb(5, 116, 5);
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 42%;
+        }
+</style>
+
+<body>
+    <header>
+        <h1 class="lott"><a href="index.html">Л{ø}<i>ТТ</i></a></h1>
+    </header>
+
+    <div class="main">
+        <p class="top">
+            Музыкальное даже иногда сверкает
+        </p>
+
+        <p>
+            <ul type="circle" class="dnd">
+                <br>
+                <lh><b class="name"></b></lh>
+                <br>
+                <br>
+                <li>Здесь будут записи песен и тексты к ним</li>
+                <br>
+                <embed src="image\lotta.pdf" type="application/pdf" height="600" width="80%">
+                <br>
+            </ul>
+        </p>
+    </div>
+    
+    <div class="end">
+        <p><a class="home" href="index.html">Домой (а был ли дом??)</a></p>
+        <iframe class="scroll" src="bottom.html"
+        frameborder="0"
+        width="100%"
+        height="290"
+        ></iframe>
+
+        <script>
+            function updateScrollingAttribute() {
+                const scrollIframe = document.querySelector('.scroll');
+                if (scrollIframe) {
+                    if (window.innerWidth > 600) {
+                        scrollIframe.setAttribute('scrolling', 'no');
+                    } else {
+                        scrollIframe.removeAttribute('scrolling');
+                    }
+                }
+            }
+    
+            updateScrollingAttribute();
+    
+            window.addEventListener('resize', updateScrollingAttribute);
+        </script>
+    </div>
+</body>
+</html>
