@@ -186,9 +186,16 @@
                 <li>Облепиха -- яркая и жаркая</li>
                 <li>Собрать букет из них мне очень интересно,, посмотрим что выйдет</li>
                 <div>&nbsp;</div>
+
+                <a class="linkcom" href="sao.html">Читать на сайте</a> <br>
+                <a class="linkte" href="saotel.html">Читать на сайте</a>
+
+                <div>&nbsp;</div>
+
                 <li><a class="linksao" href="https://telegra.ph/Oblepiha-10-06" target="_blank">Облепиха</a></li>
                 <li><a class="linksao" href="https://telegra.ph/SHalfej-10-28" target="_blank">Шалфей</a></li>
                 <li><a class="linksao" href="" target="_blank">Шалфей и Облепиха 1</a> (ожидает в коридоре)</li>
+                
                 <div>&nbsp;</div>
             </ul>
         </p>
@@ -231,6 +238,24 @@
             } else {
                 desktopLink.style.display = 'none';
                 mobileLink.style.display = 'block';
+            }
+        }
+
+        updateLinks();
+
+        window.addEventListener('resize', updateLinks);
+    </script>
+    <script>
+        const desktopLin = document.querySelector('.linkcom');
+        const mobileLin = document.querySelector('.linkte');
+
+        function updateLinks() {
+            if (window.innerWidth > 768) {
+                desktopLin.style.display = 'block';
+                mobileLin.style.display = 'none';
+            } else {
+                desktopLin.style.display = 'none';
+                mobileLin.style.display = 'block';
             }
         }
 
