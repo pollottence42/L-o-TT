@@ -1,0 +1,15 @@
+
+		<ul type="circle" class="jvlr">
+			<br>
+			<lh><b class="name">{0}</b></lh>
+
+			<br> <br>
+		
+			{1}
+
+			{2}
+
+			{3}
+
+			<br> <br>
+		</ul>
