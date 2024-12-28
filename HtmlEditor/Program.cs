@@ -173,13 +173,13 @@ namespace HtmlEditor
                 Console.WriteLine("Введите описание изображения:");
                 alt = Console.ReadLine();
                 if (check % 2 == 0)
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"40%\" width=\"40%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
+                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
                 else
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"40%\" width=\"40%\">\r\n <br>", img, alt);
+                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n <br>", img, alt);
                 check ++;
             }
 
-            if (check == 1)
+            if (check == 2)
                 image = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"56%\" width=\"56%\">\r\n", img, alt);
 
 
