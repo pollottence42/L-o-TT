@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.ConstrainedExecution;
+using System.Diagnostics;
+
+
 
 namespace HtmlEditor
 
@@ -23,7 +26,7 @@ namespace HtmlEditor
 
         public static void Choosing(string[] htmlFiles)
         {
-            Console.WriteLine(" 1) Напечатать файл \n 2) Создать файл \n 3) Скопировать файл \n 4) Вставить в файл");
+            Console.WriteLine(" 1) Напечатать файл \n 2) Создать файл \n 3) Скопировать файл \n 4) Вставить в файл \n 5) Отправить на сервер");
             var temp = int.Parse(Console.ReadLine());
             switch (temp)
             {
@@ -41,6 +44,10 @@ namespace HtmlEditor
 
                 case 4:
                     Ins(htmlFiles);
+                    break;
+
+                case 5:
+                    Git.Activator();
                     break;
 
                 default:
@@ -168,8 +175,8 @@ namespace HtmlEditor
             }
 
             var insert = string.Format(shablon, name, first, second, image);
-            
-            Console.Write("Подтвердить выкладывание?? ")
+
+            Console.Write("Подтвердить выкладывание?? ");
             var yes = Console.ReadLine();
 
             if (index == -1 || (yes!= "да" && yes!= "Да" && yes!="ДА"))

@@ -1,0 +1,66 @@
+# Общие файлы и папки
+bin/
+obj/
+out/
+
+# Папки и файлы Visual Studio
+.vs/
+.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide
+
+# Папки с пакетом NuGet
+packages/
+*.nupkg
+
+# Файлы конфигурации безопасности
+*.pdb
+*.mdb
+*.exe
+*.dll
+
+# Поддержка для Unity
+# если ваш проект Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+*.csproj.user
+
+# Исключить визуальные элементы и наборы
+*.vssscc
+*.vspscc
+
+# Логи и временные файлы
+*.log
+*.vs.lock
+*.vs.cache
+
+# Конфигурационные файлы среды
+*.vs
+*.swp
+*.tmp
+*.tmp$
+*.bak
+*.old
+
+# Автоматически генерируемые файлы
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.jfm$
+
+# Исключить файлы разработки Web App
+appsettings.Development.json
+appsettings.Staging.json
+
+# Исключить секретные файлы (.env и др.)
+.env
+
+# Определяем стандартные файлы других платформ .NET
+project.lock.json
+project.json
