@@ -164,7 +164,7 @@ namespace HtmlEditor
             var img = "";
             var alt = "";
             var image = "";
-            var check = true;
+            var check = 0;
             while (img != "image/.jpg" )
             {
                 image += t;
@@ -172,12 +172,16 @@ namespace HtmlEditor
                 img = "image/" + Console.ReadLine() + ".jpg";
                 Console.WriteLine("Введите описание изображения:");
                 alt = Console.ReadLine();
-                if(check)
+                if (check % 2 == 0)
                     t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"40%\" width=\"40%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
                 else
                     t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"40%\" width=\"40%\">\r\n <br>", img, alt);
-                check = !check;
+                check ++;
             }
+
+            if (check == 1)
+                image = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"56%\" width=\"56%\">\r\n", img, alt);
+
 
             var insert = string.Format(shablon, name, first, second, image);
                 
