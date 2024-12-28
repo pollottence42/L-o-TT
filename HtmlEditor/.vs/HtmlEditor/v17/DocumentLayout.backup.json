@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,26 +26,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Git.cs",
               "DocumentMoniker": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Git.cs",
               "RelativeDocumentMoniker": "Git.cs",
               "ToolTip": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Git.cs",
               "RelativeToolTip": "Git.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowBoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowBoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T16:55:55.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAwBwAAACMAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAUwLIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T07:56:05.224Z",
               "EditorCaption": ""
