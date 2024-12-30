@@ -1,5 +1,5 @@
 
-		<ul type="circle" class="jvlr">
+		<ul type="circle" class="block">
 			<br>
 			<lh><b class="name">{0}</b></lh>
 

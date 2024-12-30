@@ -1,0 +1,151 @@
+html, body {
+    background: linear-gradient(to bottom, #dd7826, powderblue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-weight: bold;
+}
+
+header {
+    position:fixed;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+a.lott {
+    background-image: linear-gradient(
+        to right,
+        rgb(101, 226, 243),
+        rgb(42, 231, 127)
+    );
+    font-family: 'Century Gothic', sans-serif;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+a.lott:hover {
+    text-decoration: none;
+}
+
+.cit {
+    font-family: 'Marck Script', sans-serif;
+    color:bisque;
+}
+
+a {
+    color:rgb(5, 116, 5);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.main {
+    padding-top: 84px;
+    padding-left: 100px;
+    flex: 16;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: large;
+    color:rgb(0, 0, 0);
+}
+
+.mainindex {
+    padding-left: 100px;
+    flex: 16;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: large;
+    color:rgb(0, 0, 0);
+}
+
+.top {
+    color: rgb(255, 255, 255);
+}
+
+.topindex {
+    flex: 1;
+    padding-top: 50px;
+    padding-left: 66px;
+}
+
+.block {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+}
+
+.name {
+    font-size:x-large;
+}
+
+.image {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.image2 {
+    margin-left: 28%;
+    margin-top: 0px;
+}
+
+audio {
+    width: 100%;
+    max-width: 600px;
+}
+
+.song {
+    color: rgb(0, 119, 20);
+    font-weight: bold;
+}
+
+a.linksao {
+    background-image: linear-gradient(to right, #8a1faa, #ff9900);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.linksao:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.polyn {
+    height: 319px;
+    width: 510px;
+
+    background-image: url("image/polback.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.polyn5 {
+    height: 319px;
+    width: 510px;
+
+    background-image: url("image/pol_winback.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.end {
+    padding: 10px;
+}
+
+a.home {
+    font-size:x-large;
+    color:rgb(5, 116, 5);
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 42%;
+}

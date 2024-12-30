@@ -16,8 +16,13 @@ namespace HtmlEditor
             // Путь к папке с вашим git репозиторием
             var repoPath = @"C:\LOTT\SinGit\L-o-TT"; // Измените на нужный вам путь
 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
             // Запрос сообщения коммита
             Console.Write("Введите сообщение для коммита: ");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+
             string commitMessage = Console.ReadLine();
 
             // Выполнение команд git

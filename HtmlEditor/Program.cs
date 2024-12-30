@@ -4,15 +4,11 @@ using System.IO;
 using System.Runtime.ConstrainedExecution;
 using System.Diagnostics;
 
-
-
 namespace HtmlEditor
-
 {
-
     internal class Program
     {
-        static string folderPath = @"C:\LOTT\SinGit\L-o-TT";
+        public static string folderPath = @"C:\LOTT\SinGit\L-o-TT";
 
         static void Main(string[] args)
         {
@@ -26,24 +22,50 @@ namespace HtmlEditor
 
         public static void Choosing(string[] htmlFiles)
         {
-            Console.WriteLine(" 1) Напечатать файл \n 2) Создать файл \n 3) Скопировать файл \n 4) Вставить в файл \n 5) Отправить на сервер");
+            var puncts = new string[]
+            {
+                "Вывести список файлов",
+                "Напечатать файл",
+                "Вставить в файл",
+                "Создать файл",
+                "Скопировать файл",
+                "Отправить на сервер"
+            };
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+
+            for (int i = 0; i < puncts.Length; i++)
+                Console.WriteLine("{0}) {1}", i, puncts[i]);
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+
             var temp = int.Parse(Console.ReadLine());
             switch (temp)
             {
+                case 0:
+                    var n = 0;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    foreach (string file in htmlFiles)
+                        Console.WriteLine("{0}) {1}", n++, file);
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+
                 case 1:
-                    Print(htmlFiles);
+                    Print.Activator(htmlFiles);
                     break;
 
                 case 2:
-                    Make();
+                    Insert.Activator(htmlFiles, folderPath);
                     break;
 
                 case 3:
-                    Copy(htmlFiles);
+                    Make.Activator(folderPath);
                     break;
 
                 case 4:
-                    Ins(htmlFiles);
+                    Copy.Activator(htmlFiles, folderPath);
                     break;
 
                 case 5:
@@ -53,154 +75,6 @@ namespace HtmlEditor
                 default:
                     break;
             }
-        }
-
-        public static void Make()
-        {
-            var txt = "{0} - {1} yep";
-            var a = Console.ReadLine();
-            var b = Console.ReadLine();
-            Console.WriteLine(txt, a, b);
-            var str = string.Format(txt, a, b);
-            File.WriteAllText(folderPath + "\\new.txt", str);
-        }
-
-        public static void Copy(string[] htmlFiles)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            var n = 0;
-
-            foreach (string file in htmlFiles)
-            {
-                Console.WriteLine( " {0}) {1}", n++, Path.GetFileName(file));
-            }
-
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            Console.Write("Какой файл скопировать??    ");
-            var number = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-            var text = File.ReadAllText(htmlFiles[number]);
-            File.WriteAllText(folderPath + "\\new.html", text);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Текст скопирован в \"new\" ");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public static void Print(string[] htmlFiles)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            var n = 0;
-
-            foreach (string file in htmlFiles)
-            {
-                Console.WriteLine(n++ + ") " + Path.GetFileName(file));
-            }
-
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            Console.Write("Какой файл напечатать??    ");
-            var number = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-            var text = File.ReadAllText(htmlFiles[number]);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(text);
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public static void Ins(string[] htmlFiles)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            var n = 0;
-
-            foreach (string file in htmlFiles)
-            {
-                Console.WriteLine(n++ + ") " + Path.GetFileName(file));
-            }
-
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            Console.Write("Какой файл изменить??    ");
-            var number = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-            var text = File.ReadAllText(htmlFiles[number]);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            var shablon = File.ReadAllText(folderPath + "\\shablon.txt");
-            var index = text.IndexOf("<!--here-->");
-
-            Console.Write("Введите Название: ");
-            var name = Console.ReadLine();
-
-            var t = "";
-            var first = "";
-            while (t != "<li></li>\n")
-            {
-                first += t;
-                Console.WriteLine("Введите строчку описания:");
-                t = "<li>" + Console.ReadLine() + "</li>\n";
-            }
-
-            t = "";
-            var second = "";
-            while (t != "<br>\n")
-            {
-                second += t;
-                Console.WriteLine("Введите строчку текста:");
-                t = Console.ReadLine() + "<br>\n";
-            }
-
-            t = "";
-            var img = "";
-            var alt = "";
-            var image = "";
-            var check = 0;
-            while (img != "image/.jpg" )
-            {
-                image += t;
-                Console.WriteLine("Введите название изображения:");
-                img = "image/" + Console.ReadLine() + ".jpg";
-                Console.WriteLine("Введите описание изображения:");
-                alt = Console.ReadLine();
-                if (check % 2 == 0)
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
-                else
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n <br>", img, alt);
-                check ++;
-            }
-
-            if (check == 2)
-                image = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"56%\" width=\"56%\">\r\n", img, alt);
-
-
-            var insert = string.Format(shablon, name, first, second, image);
-                
-            Console.Write("Подтвердить выкладывание?? ");
-            var yes = Console.ReadLine();
-
-            if (index == -1 || (yes!= "да" && yes!= "Да" && yes!="ДА"))
-                Console.WriteLine("Эх ну ладно");
-            else
-            {
-                var newtext = text.Insert(index + 11, insert);
-                File.WriteAllText(htmlFiles[number], newtext);
-            }
-
-
-
-            Console.WriteLine("Текст добавлен");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

@@ -5,126 +5,13 @@
     <meta lang="ru">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="stars.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
     <title>Музыка</title>
 </head>
 
-<style>
-    html, body {
-            background: linear-gradient(to bottom, #dd7826, powderblue);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
-
-        header {
-            position:fixed;
-        }
-        
-        .container {
-            min-height: 100vh;
-        }
-
-        .lott {
-            font-family: 'Century Gothic', sans-serif;
-            color: rgb(101, 226, 243);
-        }
-        
-        a.ltt {
-            background-image: linear-gradient(
-                to right,
-                rgb(101, 226, 243),
-                rgb(42, 231, 127)
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        h1 a {
-            color: rgb(101, 226, 242);
-            text-decoration: none;
-        }
-
-        h1 a:hover {
-            color:white;
-            text-decoration: none;
-        }
-
-        .main {
-            padding-top: 84px;
-            padding-left: 100px;
-            flex: 16;
-            font-family: 'Century Gothic', sans-serif;
-            font-size: large;
-            color:rgb(0, 0, 0);
-        }
-
-        .top {
-            color: rgb(0, 0, 0);
-        }
-
-        .name {
-            font-size:x-large;
-        }
-
-        .mus {
-            color: rgb(0, 0, 0);
-            border-style: solid;
-            border-width: 1px;
-            border-color: rgb(255, 255, 255);
-        }
-
-        .album {
-            color: white;
-        }
-
-        .song {
-            color: rgb(0, 119, 20);
-            font-weight: bold;
-        }
-
-        .textsong {
-            font-weight: bold;
-        }
-
-        .text {
-            color: rgb(0, 119, 20);
-            font-weight: bold;
-        }
-
-        audio {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        a.link {
-            color: rgb(0, 119, 20);
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        a.link:hover {
-            color: white;
-            text-decoration:underline;
-        }
-
-        .end {
-            padding: 10px;
-        }
-
-        a.home {
-            font-size:x-large;
-            color:rgb(5, 116, 5);
-            font-weight: bold;
-            text-decoration: none;
-            margin-left: 42%;
-        }
-</style>
-
 <body>
     <header>
-        <h1 class="lott"><a class="ltt" href="index.html">Л{ø}<i>ТТ</i></a></h1>
+        <h1><a class="lott" href="index.html">Л{ø}<i>ТТ</i></a></h1>
     </header>
 
     <div class="main">
@@ -133,7 +20,7 @@
         </p>
 
         <p>
-            <ul type="circle" class="mus">
+            <ul type="circle" class="block">
                 <br>
                 <lh><b class="name">Альбом "ЗвёздноКаштановое"</b></lh>
                 <br>
@@ -152,10 +39,10 @@
                         </audio>
                         <br>
                         <details>
-                            <summary class="textsong">
+                            <summary>
                                 Текст песни
                             </summary>
-                            <p class="text">
+                            <p class="song">
                                 Страх замшелый сложив руками,,<br>Молится камень<br>До земного утра<br>зливаю дождём весенним<br>Ночью ей потерянный рай....<br><br>Глаза закрывай<br>И спи спокойно..<br>Мне зелень крыла<br>Тоской раздольна..<br>Волна зелена<br>И солью ранит..<br>Боится она<br>Порой быть камнем..<br><br>Страх замшелый сложив руками,,<br>Молится камень<br>До земного утра<br>зливаю дождём весенним<br>Ночью ей потерянный рай....<br><br>Журчащий ручей<br>Бежит меж листьев<br>Шуршащих речей<br>И страх ей чистит..<br>Слова отточив,,<br>Отточит камень..<br>И плачут ручьи<br>Камней слезами..<br><br>И страхом несома<br>Память высью..<br>Не явь и не сон,,<br>А тяжесть мысли..<br>Уснуть тяжело,,<br>И утром каждым<br>Такой же живой<br>Проснуться страшно..<br><br>Страх замшелый сложив руками,,<br>Молится камень<br>До земного утра<br>зливаю дождём весенним<br>Ночью ей потерянный рай....<br><br>Спокойного сна,,<br>Спокойной ночи..<br>Звезды белизна<br>Прогонит прочих..<br>Спадёт с пробуждения<br>Мира тяжесть..<br>И в тёплом дожде<br>Утро ляжет..
                             </p>
                         </details>
@@ -169,10 +56,10 @@
                     </audio>
                         <br>
                         <details>
-                            <summary class="textsong">
+                            <summary>
                                 Текст песни
                             </summary>
-                            <p class="text">
+                            <p class="song">
                                 Тягучие минуты,, застрявшие в зубах..<br>"Минует?? Не минует??" Не мир,, не сон,, а страх..<br>Одетые в огне танцевали босиком..<br>Потрескалась планета на тысячи кусков<br>И сквозь земные щели свинцовые цветы..<br>Горящие качели,,<br>Как символ красоты..<br><br>Февральское распятье готовилось года,,<br>И дни весны попятились снегом без следа..<br>Мы дюжиной сидели,, и знали наперёд,,<br>Но нашей первой целью был целостный народ..<br>На тайную вечерю один пронёс шумы..<br>Горящие качели,,<br>Как символ тишины..<br><br>Летят металлоптицы,, предвешники зимы..<br>Металл огнём коптится,, но с ним ютимся мы..<br>Ребёнка вырывает клок огненных волос..<br>Бегите,, мы за вами по памяти полос<br>Траншейно--бесконечных,, намеренно окольных..<br>Закат как пламя,, вечер последний,, но спокойный..<br>Вели дебаты пылкие у включенного телика,,<br>Собрались у могилки размером с колыбельку..<br>Как песни все допели,, так тихо и красиво..<br>Горящие качели,, <br>Как символ....
                             </p>
                         </details>
@@ -186,15 +73,15 @@
                         </audio>
                             <br>
                             <details>
-                                <summary class="textsong">
+                                <summary>
                                     Текст песни
                                 </summary>
-                                <p class="text">
+                                <p class="song">
                                     Прости,, уйди.. <br><br>Будет разбито<br>Одно окно —<br>И будут разбиты<br>Сотни (людей<br>будут убиты,,<br>лишь<br>будет убит один)..<br><br>Так прости<br>и уйди..
                                 </p>
                             </details>
                             <br>
-                        <li><a class="link" target="_blank" href="https://vk.com/music/playlist/-122932286_4_674f19f4dbb324c582">Альбом в ВК</a></li>
+                        <li><a target="_blank" href="https://vk.com/music/playlist/-122932286_4_674f19f4dbb324c582">Альбом в ВК</a></li>
                 </ul>
                 <br>
             </ul>
