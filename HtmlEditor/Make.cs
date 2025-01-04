@@ -8,7 +8,7 @@ namespace HtmlEditor
 {
     public class Make
     {
-        public static void Activator(string folderPath)
+        public static void Activator()
         {
             var txt = "{0} + {1} : файл создан";
 
@@ -22,7 +22,7 @@ namespace HtmlEditor
             Console.WriteLine(txt, a, b);
 
             var str = string.Format(txt, a, b);
-            File.WriteAllText(folderPath + "\\new.txt", str);
+            File.WriteAllText(Program.folderPath + "\\new.txt", str);
         }
     }
 }

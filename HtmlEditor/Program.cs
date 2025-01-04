@@ -57,15 +57,15 @@ namespace HtmlEditor
                     break;
 
                 case 2:
-                    Insert.Activator(htmlFiles, folderPath);
+                    Insert.Activator(htmlFiles);
                     break;
 
                 case 3:
-                    Make.Activator(folderPath);
+                    Make.Activator();
                     break;
 
                 case 4:
-                    Copy.Activator(htmlFiles, folderPath);
+                    Copy.Activator(htmlFiles);
                     break;
 
                 case 5:

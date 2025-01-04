@@ -8,7 +8,7 @@ namespace HtmlEditor
 {
     public class Copy
     {
-        public static void Activator(string[] htmlFiles, string folderPath)
+        public static void Activator(string[] htmlFiles)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
@@ -27,7 +27,7 @@ namespace HtmlEditor
             var number = int.Parse(Console.ReadLine());
             Console.WriteLine();
             var text = File.ReadAllText(htmlFiles[number]);
-            File.WriteAllText(folderPath + "\\new.html", text);
+            File.WriteAllText(Program.folderPath + "\\new.html", text);
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             

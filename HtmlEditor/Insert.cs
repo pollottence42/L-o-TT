@@ -9,7 +9,7 @@ namespace HtmlEditor
 {
     public class Insert
     {
-        public static void Activator(string[] htmlFiles, string folderPath)
+        public static void Activator(string[] htmlFiles)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
@@ -31,7 +31,7 @@ namespace HtmlEditor
             var number = int.Parse(Console.ReadLine());
             Console.WriteLine();
             var text = File.ReadAllText(htmlFiles[number]);
-            var shablon = File.ReadAllText(folderPath + "\\shablon.txt");
+            var shablon = File.ReadAllText(Program.folderPath + "\\shablon.txt");
             var index = text.IndexOf("<!--here-->");
 
             if (index == -1)
