@@ -11,7 +11,7 @@ namespace HtmlEditor
 {
     public class Git
     {
-        public static void Activator()
+        public void Activator()
         {
             // Путь к папке с вашим git репозиторием
             var repoPath = @"C:\LOTT\SinGit\L-o-TT"; // Измените на нужный вам путь

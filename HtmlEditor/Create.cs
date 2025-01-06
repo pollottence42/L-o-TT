@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HtmlEditor
 {
-    public class Make
+    public class Create
     {
-        public static void Activator()
+        public void Activator()
         {
             var txt = "{0} + {1} : файл создан";
 

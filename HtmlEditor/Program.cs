@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.ConstrainedExecution;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace HtmlEditor
 {
@@ -53,23 +54,28 @@ namespace HtmlEditor
                     break;
 
                 case 1:
-                    Print.Activator(htmlFiles);
+                    var print = new Print();
+                    print.Activator(htmlFiles);
                     break;
 
                 case 2:
-                    Insert.Activator(htmlFiles);
+                    var insert = new Insert();
+                    insert.Activator(htmlFiles);
                     break;
 
                 case 3:
-                    Make.Activator();
+                    var create = new Create();
+                    create.Activator();
                     break;
 
                 case 4:
-                    Copy.Activator(htmlFiles);
+                    var copy = new Copy();
+                    copy.Activator(htmlFiles);
                     break;
 
                 case 5:
-                    Git.Activator();
+                    var git = new Git();
+                    git.Activator();
                     break;
 
                 default:

@@ -8,7 +8,7 @@ namespace HtmlEditor
 {
     public class Copy
     {
-        public static void Activator(string[] htmlFiles)
+        public void Activator(string[] htmlFiles)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 

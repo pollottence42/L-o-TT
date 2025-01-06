@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace HtmlEditor
 {
     public class Insert
     {
-        public static void Activator(string[] htmlFiles)
+        public void Activator(string[] htmlFiles)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
@@ -95,18 +96,26 @@ namespace HtmlEditor
 
                 img = "image/" + Console.ReadLine() + ".jpg";
 
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-
-                Console.Write("Введите описание изображения: ");
-
-                Console.ForegroundColor = ConsoleColor.Red;
-
-                alt = Console.ReadLine();
-                if (check % 2 == 0)
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
+                if (!File.Exists(Program.folderPath + "/" + img))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Изображения не существует");
+                }
                 else
-                    t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n <br>", img, alt);
-                check++;
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+
+                    Console.Write("Введите описание изображения: ");
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    alt = Console.ReadLine();
+                    if (check % 2 == 0)
+                        t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp;", img, alt);
+                    else
+                        t = string.Format("<img class=\"image\" src=\"{0}\" alt=\"{1}\" height=\"42%\" width=\"42%\">\r\n <br>", img, alt);
+                    check++;
+                }
             }
 
             if (check == 2)
