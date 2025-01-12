@@ -202,21 +202,3 @@ a.home {
     text-decoration: none;
     margin-left: 42%;
 }
-
-.gradient-button {
-    margin-left: 47%;
-    background: linear-gradient(to right, #1e8505, #2087a7);
-    color: rgb(0, 0, 0);
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.gradient-button:hover {
-    background: linear-gradient(to right, #2087a7, #1e8505);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
