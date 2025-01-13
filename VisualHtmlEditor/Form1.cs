@@ -91,7 +91,22 @@ namespace VisualHtmlEditor
                 text += Path.GetFileName(file) + Environment.NewLine + Environment.NewLine;
 
             var files = new Files(text);
-            files.ShowDialog();
+            files.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var print = new Print();
+            print.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var git = new Git();
+            git.Show();
+            this.Hide();
         }
     }
 }

@@ -19,5 +19,12 @@ namespace VisualHtmlEditor
 
             textBox1.Text = text;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var form1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            form1.Show();
+        }
     }
 }

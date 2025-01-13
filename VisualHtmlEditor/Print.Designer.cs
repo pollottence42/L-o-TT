@@ -2,7 +2,7 @@
 
 namespace VisualHtmlEditor
 {
-    partial class Files
+    partial class Print
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,40 @@ namespace VisualHtmlEditor
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Files));
+            this.fileName = new System.Windows.Forms.TextBox();
+            this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.text = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // fileName
+            // 
+            this.fileName.BackColor = System.Drawing.Color.PaleGreen;
+            this.fileName.Location = new System.Drawing.Point(13, 51);
+            this.fileName.Name = "fileName";
+            this.fileName.Size = new System.Drawing.Size(188, 20);
+            this.fileName.TabIndex = 0;
+            // 
+            // buttonOpenFile
+            // 
+            this.buttonOpenFile.BackColor = System.Drawing.Color.SpringGreen;
+            this.buttonOpenFile.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpenFile.Location = new System.Drawing.Point(12, 12);
+            this.buttonOpenFile.Name = "buttonOpenFile";
+            this.buttonOpenFile.Size = new System.Drawing.Size(188, 23);
+            this.buttonOpenFile.TabIndex = 1;
+            this.buttonOpenFile.Text = "Выбрать файл";
+            this.buttonOpenFile.UseVisualStyleBackColor = false;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
+            // 
+            // text
+            // 
+            this.text.Location = new System.Drawing.Point(12, 77);
+            this.text.Multiline = true;
+            this.text.Name = "text";
+            this.text.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.text.Size = new System.Drawing.Size(605, 295);
+            this.text.TabIndex = 2;
             // 
             // button1
             // 
@@ -42,49 +72,39 @@ namespace VisualHtmlEditor
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(254, 390);
+            this.button1.Location = new System.Drawing.Point(243, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 57);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Главная";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.PowderBlue;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(6, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(612, 372);
-            this.textBox1.TabIndex = 4;
-            // 
-            // Files
+            // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 459);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.text);
+            this.Controls.Add(this.buttonOpenFile);
+            this.Controls.Add(this.fileName);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Files";
-            this.Text = "Files";
+            this.Name = "Print";
+            this.Text = "Print";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-
-
         #endregion
 
+        private System.Windows.Forms.TextBox fileName;
+        private System.Windows.Forms.Button buttonOpenFile;
+        private System.Windows.Forms.TextBox text;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
