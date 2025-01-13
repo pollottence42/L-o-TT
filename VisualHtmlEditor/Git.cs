@@ -26,14 +26,19 @@ namespace VisualHtmlEditor
 
         private void commit_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Имя коммита: " + textBox1.Text, "Вы уверены", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Имя коммита: " + "\"" + textBox1.Text + "\"", "Вы уверены", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
-                Commit("commit -m " + textBox1.Text);
+                Commit("commit -m " + "\"" + textBox1.Text + "\"");
         }
 
         private void Commit (string command)
         {
             Activator(command);
+        }
+
+        private void push_Click(object sender, EventArgs e)
+        {
+            Activator("push");
         }
 
         public void Activator(string command)

@@ -84,6 +84,7 @@
             this.push.TabIndex = 6;
             this.push.Text = "git push";
             this.push.UseVisualStyleBackColor = false;
+            this.push.Click += new System.EventHandler(this.push_Click);
             // 
             // textBox1
             // 
