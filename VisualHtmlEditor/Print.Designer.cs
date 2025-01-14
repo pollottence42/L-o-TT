@@ -30,6 +30,7 @@ namespace VisualHtmlEditor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Print));
             this.fileName = new System.Windows.Forms.TextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.text = new System.Windows.Forms.TextBox();
@@ -38,16 +39,18 @@ namespace VisualHtmlEditor
             // 
             // fileName
             // 
-            this.fileName.BackColor = System.Drawing.Color.PaleGreen;
+            this.fileName.BackColor = System.Drawing.Color.LightCoral;
+            this.fileName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fileName.Location = new System.Drawing.Point(13, 51);
             this.fileName.Name = "fileName";
-            this.fileName.Size = new System.Drawing.Size(188, 20);
+            this.fileName.Size = new System.Drawing.Size(188, 21);
             this.fileName.TabIndex = 0;
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.BackColor = System.Drawing.Color.SpringGreen;
+            this.buttonOpenFile.BackColor = System.Drawing.Color.IndianRed;
             this.buttonOpenFile.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpenFile.ForeColor = System.Drawing.Color.White;
             this.buttonOpenFile.Location = new System.Drawing.Point(12, 12);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(188, 23);
@@ -67,7 +70,7 @@ namespace VisualHtmlEditor
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -93,6 +96,7 @@ namespace VisualHtmlEditor
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Print";
             this.Text = "Print";
             this.ResumeLayout(false);

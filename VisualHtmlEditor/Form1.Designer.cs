@@ -45,8 +45,10 @@
             this.textBox1.ForeColor = System.Drawing.Color.MintCream;
             this.textBox1.Location = new System.Drawing.Point(26, 12);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(87, 36);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "L{Ø}TT ";
             // 
             // button1
@@ -78,6 +80,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Создать страницу";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 

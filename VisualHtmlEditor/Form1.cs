@@ -108,5 +108,12 @@ namespace VisualHtmlEditor
             git.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var create = new Create();
+            create.Show();
+            this.Hide();
+        }
     }
 }

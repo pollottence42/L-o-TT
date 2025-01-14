@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Git));
             this.button1 = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.commit = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
+            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -52,7 +53,7 @@
             // 
             // add
             // 
-            this.add.BackColor = System.Drawing.Color.PowderBlue;
+            this.add.BackColor = System.Drawing.Color.Aquamarine;
             this.add.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.add.Location = new System.Drawing.Point(67, 45);
             this.add.Name = "add";
@@ -64,7 +65,7 @@
             // 
             // commit
             // 
-            this.commit.BackColor = System.Drawing.Color.PowderBlue;
+            this.commit.BackColor = System.Drawing.Color.MediumTurquoise;
             this.commit.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.commit.Location = new System.Drawing.Point(229, 169);
             this.commit.Name = "commit";
@@ -76,7 +77,7 @@
             // 
             // push
             // 
-            this.push.BackColor = System.Drawing.Color.PowderBlue;
+            this.push.BackColor = System.Drawing.Color.Teal;
             this.push.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.push.Location = new System.Drawing.Point(391, 260);
             this.push.Name = "push";
@@ -109,6 +110,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Git";
             this.Text = "Git";
             this.ResumeLayout(false);
