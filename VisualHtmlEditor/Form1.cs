@@ -115,5 +115,12 @@ namespace VisualHtmlEditor
             create.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var insert = new Insert();
+            this.Hide();
+            insert.Show();
+        }
     }
 }
