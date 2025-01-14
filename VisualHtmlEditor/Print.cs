@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace VisualHtmlEditor
 {
@@ -49,6 +50,30 @@ namespace VisualHtmlEditor
             this.Close();
             var form1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
             form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var path = fileName.Text;
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show($"Файл не найден: {path}");
+                return;
+            }
+
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = path,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при открытии файла: {ex.Message}");
+            }
         }
     }
 }

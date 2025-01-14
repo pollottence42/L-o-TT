@@ -103,13 +103,13 @@
             // 
             this.button4.BackColor = System.Drawing.Color.IndianRed;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(135, 329);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 57);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Вывести текст файла";
+            this.button4.Text = "Вывести текст файла / открыть страницу";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
