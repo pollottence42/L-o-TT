@@ -6,6 +6,7 @@ out/
 # Папки и файлы Visual Studio
 .vs/
 .suo
+.json
 *.user
 *.userosscache
 *.sln.docstates

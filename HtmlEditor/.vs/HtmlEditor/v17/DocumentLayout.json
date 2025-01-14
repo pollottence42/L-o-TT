@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:insert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:git.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|solutionrelative:create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A04D822-A98A-4EC2-9127-9AEEEA75C4E5}|HtmlEditor.csproj|c:\\lott\\singit\\l-o-tt\\htmleditor\\copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Create.cs",
               "DocumentMoniker": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Create.cs",
               "RelativeDocumentMoniker": "Create.cs",
@@ -66,7 +66,8 @@
               "RelativeToolTip": "Create.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T20:43:13.34Z"
+              "WhenOpened": "2024-12-30T20:43:13.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,7 +77,7 @@
               "RelativeDocumentMoniker": "Insert.cs",
               "ToolTip": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Insert.cs",
               "RelativeToolTip": "Insert.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAIwIkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T20:21:49.424Z",
               "EditorCaption": ""
@@ -95,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Git.cs",
               "DocumentMoniker": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Git.cs",
               "RelativeDocumentMoniker": "Git.cs",
@@ -107,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\LOTT\\SinGit\\L-o-TT\\HtmlEditor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -115,8 +116,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T07:56:05.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T07:56:05.224Z"
             }
           ]
         }
