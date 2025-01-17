@@ -104,12 +104,13 @@ namespace VisualHtmlEditor
             {
                 foreach (var image in images)
                 {
-                    if (image.Contains("."))
+                    var img = "image\\" + Path.GetFileName(image);
+                    if (img.Contains("."))
                     {
                         if (check % 2 == 0)
-                            imagesSh += string.Format("<img class=\"image\" src=\"{0}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp; \n", image);
+                            imagesSh += string.Format("<img class=\"image\" src=\"{0}\" height=\"42%\" width=\"42%\">\r\n &nbsp;&nbsp;&nbsp;&nbsp; \n", img);
                         else
-                            imagesSh += string.Format("<img class=\"image\" src=\"{0}\" height=\"42%\" width=\"42%\">\r\n <br>\n", image);
+                            imagesSh += string.Format("<img class=\"image\" src=\"{0}\" height=\"42%\" width=\"42%\">\r\n <br>\n", img);
                         check++;
                     }
                 }
