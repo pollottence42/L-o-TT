@@ -107,7 +107,7 @@ a:hover {
     transition: transform 0.8s;
 }
 
-.image:hover {
+.image:hover, .image2:hover {
     transform: scale(1.2);
     border-style: solid;
     border-color:rgb(230, 172, 14);
@@ -115,15 +115,16 @@ a:hover {
     0px 0px 10px white inset;
 }
 
+@media screen and (max-width: 1024px) {
+    .image:hover, .image2:hover {
+        transform: scale(2);
+    }
+}
+
 .image2 {
     margin-left: 28%;
     margin-top: 0px;
     transition: transform 0.8s;
-}
-.image2:hover {
-    transform: scale(1.2);
-    border-style: solid;
-    border-color:white;
 }
 
 audio {
