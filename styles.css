@@ -110,7 +110,9 @@ a:hover {
 .image:hover {
     transform: scale(1.2);
     border-style: solid;
-    border-color:white;
+    border-color:rgb(230, 172, 14);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255),
+    0px 0px 10px white inset;
 }
 
 .image2 {
