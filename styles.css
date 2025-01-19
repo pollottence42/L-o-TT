@@ -104,11 +104,24 @@ a:hover {
 .image {
     margin-left: 0;
     margin-top: 10px;
+    transition: transform 0.8s;
+}
+
+.image:hover {
+    transform: scale(1.2);
+    border-style: solid;
+    border-color:white;
 }
 
 .image2 {
     margin-left: 28%;
     margin-top: 0px;
+    transition: transform 0.8s;
+}
+.image2:hover {
+    transform: scale(1.2);
+    border-style: solid;
+    border-color:white;
 }
 
 audio {
