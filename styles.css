@@ -1,7 +1,7 @@
 html, body {
     background: linear-gradient(to bottom, #dd7826, powderblue);
     min-height: 100vh;
-    min-width: 73vh;
+    min-width: 68vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
