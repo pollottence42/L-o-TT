@@ -1,7 +1,7 @@
 html, body {
     background: linear-gradient(to bottom, #dd7826, powderblue);
     min-height: 100vh;
-    min-width: none;
+    min-width: 73vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -35,15 +35,6 @@ a.lott:hover {
 .cit {
     font-family: 'Marck Script', sans-serif;
     color:bisque;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
 }
 
 a {
@@ -90,6 +81,7 @@ a:hover {
     border-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px white,
     0px 0px 10px white inset;
+    width: 80%;
 }
 
 @media screen and (min-width: 1024px) {
