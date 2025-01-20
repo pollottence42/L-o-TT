@@ -1,7 +1,7 @@
 html, body {
     background: linear-gradient(to bottom, #dd7826, powderblue);
     min-height: 100vh;
-    min-width: 68vh;
+    min-width: 65vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -110,7 +110,7 @@ a:hover {
 
 @media screen and (max-width: 1024px) {
     .image:hover, .image2:hover {
-        transform: scale(1.4);
+        transform: scale(1.5);
     }
 }
 
