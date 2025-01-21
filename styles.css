@@ -26,6 +26,7 @@ a.lott {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 28px;
 }
 
 a.lott:hover {
@@ -50,7 +51,7 @@ a:hover {
 
 .main {
     padding-top: 84px;
-    padding-left: 100px;
+    padding-left: 85px;
     flex: 16;
     font-family: 'Century Gothic', sans-serif;
     font-size: large;
