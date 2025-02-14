@@ -98,9 +98,9 @@ namespace VisualHtmlEditor
             var imagesSh = "";
             var check = 0;
 
-            if (images.Length == 0 || images == null)
+            if (images.Length <= 1 || images == null)
                 imagesSh = "";
-            else if (images.Length != 1)
+            else if (images.Length != 2)
             {
                 foreach (var image in images)
                 {
