@@ -213,3 +213,19 @@ a.home {
     text-decoration: none;
     margin-left: 42%;
 }
+
+.linkcomp, .linktel{
+    color:whitesmoke;
+}
+
+ .linkcom, .linkte {
+    color:darkgreen;
+ }
+
+.linkcomp:hover, .linktel:hover{
+    color:rgb(22, 95, 13);
+}
+
+.linkcom:hover, .linkte:hover {
+    color:rgb(0, 0, 0);
+}
