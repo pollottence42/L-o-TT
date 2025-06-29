@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="stars.ico" type="image/x-icon">
+    <title>Полынь 14</title>
+</head>
+
+<style>
+    html, body {
+        background: none;
+        color: rgb(0, 0, 0);
+        font-family: 'Century Gothic', sans-serif;
+        font-weight: bold;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+</style>
+
+<body>
+
+    <h1>Полынь,, пятнадцатая</h1>
+Полынь,, пятнадцатая<br><br>
+using System.Diagnostics.Metrics;<br><br>
+using System.Text;<br><br>
+using System.IO;<br><br>
+using System.Drawing;<br><br>
+using System;<br><br>
+using System.Net;<br><br>
+using System.Xml.Linq;<br><br>
+using System.Diagnostics;<br><br>
+<br><br>
+namespace TextAnalysis;<br><br>
+<br><br>
+public class Program<br><br>
+{<br><br>
+    public static void Main(string[] args)<br><br>
+    {<br><br>
+        var name = Environment.UserName;<br><br>
+        string text = "";<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Начнём??\t\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.DarkGray;<br><br>
+        TypeWriter("Если хотите узнать о программе,, введите \"справка\"");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        Console.Write("\rНачнём?? ");<br><br>
+        Console.ForegroundColor = ConsoleColor.Yellow;<br><br>
+        var start = Console.ReadLine();<br><br>
+<br><br>
+        while (start == "справка" || start == "Справка" || start == "?" || start == "??" || start == "???" || start == "????" || start == "?????" || start == "??????")<br><br>
+        {<br><br>
+            Help();<br><br>
+            Console.ForegroundColor = ConsoleColor.Yellow;<br><br>
+            start = Console.ReadLine();<br><br>
+        }<br><br>
+<br><br>
+        if (Stop(start))<br><br>
+        {<br><br>
+            bool check = true;<br><br>
+            var count = 1;<br><br>
+            Console.ForegroundColor = ConsoleColor.Green;<br><br>
+            TypeWriter("Сколько файлов хотите открыть?? ", 10);<br><br>
+            while (check)<br><br>
+            {<br><br>
+                Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+                var stringCount = Console.ReadLine();<br><br>
+                if (int.TryParse(stringCount, out count))<br><br>
+                    check = false;<br><br>
+                else if (Stop(stringCount))<br><br>
+                {<br><br>
+                    check = false;<br><br>
+                    count = 0;<br><br>
+                }<br><br>
+                else<br><br>
+                {<br><br>
+                    Console.ForegroundColor = ConsoleColor.DarkRed;<br><br>
+                    TypeWriter("Введите целое число (например,, 7) или \"стоп\": ", 10);<br><br>
+                }<br><br>
+            }<br><br>
+<br><br>
+<br><br>
+            if (count == 0)<br><br>
+                text = File.ReadAllText("C:\\Users\\" + name + "\\Downloads\\Dom.txt");<br><br>
+<br><br>
+            for (int i = 0; i < count; i++)<br><br>
+            {<br><br>
+                check = true;<br><br>
+                TypeWriter("Введите путь к файлу: ");<br><br>
+                while (check)<br><br>
+                {<br><br>
+                    Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+                    var path = Console.ReadLine();<br><br>
+                    if (File.Exists(path))<br><br>
+                    {<br><br>
+                        text = text + File.ReadAllText(path);<br><br>
+                        check = false;<br><br>
+                    }<br><br>
+                    else if (Stop(path) && text != "")<br><br>
+                    {<br><br>
+                        i = count;<br><br>
+                        check = false;<br><br>
+                    }<br><br>
+                    else if (Stop(path))<br><br>
+                    {<br><br>
+                        text = File.ReadAllText("C:\\Users\\" + name + "\\Downloads\\Dom.txt");<br><br>
+                        i = count;<br><br>
+                        check = false;<br><br>
+                    }<br><br>
+                    else<br><br>
+                    {<br><br>
+                        Console.ForegroundColor = ConsoleColor.DarkRed;<br><br>
+                        TypeWriter("Введите верный путь к файлу или \"стоп\": ", 10);<br><br>
+                    }<br><br>
+                }<br><br>
+            }<br><br>
+<br><br>
+        }<br><br>
+        else<br><br>
+        {<br><br>
+            if (File.Exists("C:\\Users\\" + name + "\\Downloads\\Dom.txt"))<br><br>
+                text = File.ReadAllText("C:\\Users\\" + name + "\\Downloads\\Dom.txt");<br><br>
+            else<br><br>
+            {<br><br>
+                Console.ForegroundColor = ConsoleColor.DarkRed;<br><br>
+                Console.WriteLine("Файл отсутствует.. Пожалуйста,, запустите заново и прочитайте справку..");<br><br>
+                Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+                return;<br><br>
+            }<br><br>
+        }<br><br>
+        Console.Write("\n");<br><br>
+<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Пожалуйста,, подождите....\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.White;<br><br>
+        TypeWriter("-|       ЗАПУСК       |-", 5);<br><br>
+        var sentences = SentencesParserTask.ParseSentences(text);<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        Console.Write("\rПожалуйста,, подождите....\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.White;<br><br>
+        Console.BackgroundColor = ConsoleColor.DarkBlue;<br><br>
+        TypeWriter("-|     ", 25);<br><br>
+        var frequency = RandomNext.Frequency(sentences);<br><br>
+        TypeWriter("  З", 25);<br><br>
+        var ends = NewEnds.Ends(sentences);<br><br>
+        TypeWriter("АПУСК ", 25);<br><br>
+        var nextSent = NextSentence.FirstWord(sentences);<br><br>
+        TypeWriter("      |-", 25);<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        Console.BackgroundColor = ConsoleColor.Black;<br><br>
+        Console.Write("\rПожалуйста,, подождите....\t");<br><br>
+        Console.BackgroundColor = ConsoleColor.Green;<br><br>
+        Console.ForegroundColor = ConsoleColor.White;<br><br>
+        TypeWriter("-|       ГОТОВО       |-", 5);<br><br>
+        Console.BackgroundColor = ConsoleColor.Black;<br><br>
+        Console.ForegroundColor = ConsoleColor.Black;<br><br>
+        Console.WriteLine("LOTT \n");<br><br>
+        System.Threading.Thread.Sleep(42);<br><br>
+        while (true)<br><br>
+        {<br><br>
+            Console.BackgroundColor = ConsoleColor.Black;<br><br>
+            Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+            TypeWriter("\rВведите первые слова (например,, \"Мир\" или \"Было время\"): ", 10);<br><br>
+            Console.ForegroundColor = ConsoleColor.Yellow;<br><br>
+            var beginning = Console.ReadLine();<br><br>
+            Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+            TypeWriter("Введите количество новых слов (например,, 7): ", 10);<br><br>
+<br><br>
+            var check = true;<br><br>
+            var count = 0;<br><br>
+            while (check)<br><br>
+            {<br><br>
+                Console.ForegroundColor = ConsoleColor.Yellow;<br><br>
+                var stringCount = Console.ReadLine();<br><br>
+                if (int.TryParse(stringCount, out count) || Stop(stringCount))<br><br>
+                    check = false;<br><br>
+                else<br><br>
+                {<br><br>
+                    Console.ForegroundColor = ConsoleColor.DarkRed;<br><br>
+                    TypeWriter("Введите целое число (например,, 7) или \"стоп\": ", 10);<br><br>
+                }<br><br>
+            }<br><br>
+<br><br>
+            Console.ForegroundColor = ConsoleColor.DarkYellow;<br><br>
+            Console.Write("\n");<br><br>
+            if (!string.IsNullOrEmpty(beginning))<br><br>
+            {<br><br>
+                var phrase = RandomGenerator.RandomContinue(frequency, ends, nextSent, sentences, beginning, count);<br><br>
+                if (phrase.Length > 500)<br><br>
+                {<br><br>
+                    Console.Write(phrase);<br><br>
+                    System.Threading.Thread.Sleep(2000);<br><br>
+                }<br><br>
+                else<br><br>
+                    TypeWriter(phrase);<br><br>
+                Console.Write("\n\n");<br><br>
+            }<br><br>
+            else<br><br>
+            {<br><br>
+                Console.ForegroundColor = ConsoleColor.DarkGray;<br><br>
+                TypeWriter("Вы не ввели первые слова");<br><br>
+                Console.Write("\n\n");<br><br>
+            }<br><br>
+        }<br><br>
+    }<br><br>
+<br><br>
+    public static void TypeWriter(string text)<br><br>
+    {<br><br>
+        foreach (char letter in text)<br><br>
+        {<br><br>
+            Console.Write(letter);<br><br>
+            System.Threading.Thread.Sleep(22);<br><br>
+        }<br><br>
+    }<br><br>
+<br><br>
+    public static void TypeWriter(string text, int pause)<br><br>
+    {<br><br>
+        foreach (char letter in text)<br><br>
+        {<br><br>
+            Console.Write(letter);<br><br>
+            System.Threading.Thread.Sleep(pause);<br><br>
+        }<br><br>
+    }<br><br>
+    public static bool Stop(string word)<br><br>
+    {<br><br>
+        return (word == "Stop" || word == "stop" || word == "Стоп" || word == "стоп");<br><br>
+    }<br><br>
+<br><br>
+    public static void Help()<br><br>
+    {<br><br>
+        Console.Write("\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Привет,, звёздочки и созвездия");<br><br>
+        Console.ForegroundColor = ConsoleColor.Green;<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Меня зовут Марон Глясе,,");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("и я хочу познакомить вас с моей программой,,");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("но для начала скачайте в папку \"Загрузки\" файл отсюда:");<br><br>
+        Console.Write("\n\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.DarkRed;<br><br>
+        TypeWriter("https://www.dropbox.com/scl/fi/sr2wpf88ixnj3lxwcxm7z/Dom.txt?rlkey=675amkt0vguc4z5bltqw2vncy&st=n0kpmwwc&dl=0");<br><br>
+<br><br>
+<br><br>
+        Console.Write("\n\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Здесь вы можете выбрать ваши тексты и на их основе получить новые предложения");<br><br>
+        Console.ForegroundColor = ConsoleColor.Green;<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Программа анализирует полученные тексты и случайным образом");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("продолжает ваши слова");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Она завершает предложения,, и старается закончить текст");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("ровно за запрошенное количество слов");<br><br>
+<br><br>
+<br><br>
+        Console.Write("\n\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("После первого вопроса вы можете ввести \"стоп\"");<br><br>
+        Console.Write("\n\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.Green;<br><br>
+        TypeWriter("Вас попросят ввести число файлов,, которые вы хотите открыть");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("После ввода числа вы сможете по очереди добавлять файлы,,");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("вставляя прямые пути к .txt файлам");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("В любой момент вы можете остановить ввод новых файлов,,");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("написав \"стоп\"");<br><br>
+<br><br>
+        Console.Write("\n\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Если вы не остановили программу,, в неё будет загружен \"Дом в котором...\"");<br><br>
+        Console.Write("\n\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.Green;<br><br>
+        TypeWriter("В любом случае,, тексты будут проанализированы");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("После этого программа начнёт свою работу");<br><br>
+<br><br>
+        Console.Write("\n\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Работа программы");<br><br>
+        Console.Write("\n\t");<br><br>
+        Console.ForegroundColor = ConsoleColor.Green;<br><br>
+        TypeWriter("Вас попросят ввести одно или несколько слов");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("С этих слов начнётся текст,, который выведет программа");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("После этого вас попросят ввести число");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Это примерное число слов будущего текста без учёта вашего начала");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Итоговое число слов вывода может немного отличаться");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Если вы не введёте слова,, программа выдаст лишь комментарий");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Если вы в место числа введёте 0 или \"стоп\",, программа выведет ваши слова");<br><br>
+        Console.Write("\n\t");<br><br>
+        TypeWriter("Один и тот же запрос может выдавать разные ответы программы");<br><br>
+<br><br>
+        Console.Write("\n\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.DarkCyan;<br><br>
+        TypeWriter("Приятного пользования * <3 *");<br><br>
+<br><br>
+        Console.WriteLine("\n");<br><br>
+        Console.ForegroundColor = ConsoleColor.Cyan;<br><br>
+        TypeWriter("Теперь начнём?? ");<br><br>
+<br><br>
+    }<br><br>
+}<br><br>
+<br><br>
+static class SentencesParserTask<br><br>
+{<br><br>
+    private static char[] signs = { '.', ';', '!', '?', '(', ')' };<br><br>
+    public static List<List<string>> ParseSentences(string text)<br><br>
+    {<br><br>
+        var sentencesList = new List<List<string>>();<br><br>
+        foreach (var sentence in text.Split(signs))<br><br>
+            ParseSentence(sentencesList, sentence);<br><br>
+        return sentencesList;<br><br>
+    }<br><br>
+<br><br>
+    private static void ParseSentence(List<List<string>> sentencesList, string sentence)<br><br>
+    {<br><br>
+        var word = new StringBuilder();<br><br>
+        var words = new List<string>();<br><br>
+        foreach (var symbol in sentence)<br><br>
+        {<br><br>
+            if (char.IsLetter(symbol) || symbol == '\'')<br><br>
+            {<br><br>
+                var lowerSymbol = char.ToLower(symbol);<br><br>
+                word.Append(lowerSymbol);<br><br>
+            }<br><br>
+            else if (word.Length > 0)<br><br>
+            {<br><br>
+                words.Add(word.ToString());<br><br>
+                word.Clear();<br><br>
+            }<br><br>
+        }<br><br>
+        if (word.Length > 0)<br><br>
+            words.Add(word.ToString());<br><br>
+        if (words.Count > 0)<br><br>
+            sentencesList.Add(words);<br><br>
+    }<br><br>
+}<br><br>
+<br><br>
+internal class RandomNext<br><br>
+{<br><br>
+    public static Dictionary<string, List<string>> Frequency(List<List<string>> text)<br><br>
+    {<br><br>
+        var result = new Dictionary<string, List<string>>();<br><br>
+<br><br>
+        for (int i = 0; i < text.Count; i++)<br><br>
+        {<br><br>
+            if (text[i].Count > 1)<br><br>
+            {<br><br>
+                for (int j = 0; j < text[i].Count - 1; j++)<br><br>
+                {<br><br>
+                    if (!result.ContainsKey(text[i][j]))<br><br>
+                        result[text[i][j]] = new List<string>();<br><br>
+                    result[text[i][j]].Add(text[i][j + 1]);<br><br>
+                }<br><br>
+            }<br><br>
+        }<br><br>
+<br><br>
+        for (int i = 0; i < text.Count; i++)<br><br>
+        {<br><br>
+            if (text[i].Count > 2)<br><br>
+            {<br><br>
+                for (int j = 0; j < text[i].Count - 2; j++)<br><br>
+                {<br><br>
+                    string couple = text[i][j] + " " + text[i][j + 1];<br><br>
+                    if (!result.ContainsKey(couple))<br><br>
+                        result[couple] = new List<string>();<br><br>
+                    result[couple].Add(text[i][j + 2]); ;<br><br>
+                }<br><br>
+            }<br><br>
+        }<br><br>
+<br><br>
+        return result;<br><br>
+    }<br><br>
+}<br><br>
+<br><br>
+internal class NewEnds<br><br>
+{<br><br>
+    public static Dictionary<string, string[]> Ends(List<List<string>> text)<br><br>
+    {<br><br>
+        var result = new Dictionary<string, string[]>();<br><br>
+        foreach (var words in text)<br><br>
+        {<br><br>
+            string prequel = "";<br><br>
+            if (words.Count > 1)<br><br>
+                prequel = words[words.Count - 2];<br><br>
+            if (!result.ContainsKey(prequel))<br><br>
+                result[prequel] = new string[] { words[words.Count - 1] };<br><br>
+            else<br><br>
+            {<br><br>
+                string[] moment = new string[result[prequel].Length + 1];<br><br>
+                for (var i = 0; i < result[prequel].Length; i++)<br><br>
+                    moment[i] = result[prequel][i];<br><br>
+                moment[moment.Length - 1] = words[words.Count - 1];<br><br>
+                result[prequel] = moment;<br><br>
+            }<br><br>
+        }<br><br>
+        return result;<br><br>
+    }<br><br>
+}<br><br>
+<br><br>
+internal class NextSentence<br><br>
+{<br><br>
+    public static Dictionary<string, string[]> FirstWord(List<List<string>> text)<br><br>
+    {<br><br>
+        var result = new Dictionary<string, string[]>();<br><br>
+        for (int i = 0; i < text.Count - 1; i++)<br><br>
+        {<br><br>
+            var end = text[i][text[i].Count - 1];<br><br>
+            var beg = text[i + 1][0];<br><br>
+            if (result.ContainsKey(end))<br><br>
+            {<br><br>
+                string[] sent = new string[result[end].Length + 1];<br><br>
+                for (int j = 0; j < sent.Length - 1; j++)<br><br>
+                    sent[j] = result[end][j];<br><br>
+                sent[sent.Length - 1] = beg;<br><br>
+                result[end] = sent;<br><br>
+            }<br><br>
+            else<br><br>
+                result[end] = new string[] { beg };<br><br>
+        }<br><br>
+<br><br>
+        return result;<br><br>
+    }<br><br>
+}<br><br>
+<br><br>
+internal class RandomGenerator<br><br>
+{<br><br>
+    public static string RandomContinue(<br><br>
+        Dictionary<string, List<string>> nextWords,<br><br>
+        Dictionary<string, string[]> lastWords,<br><br>
+        Dictionary<string, string[]> nextSent,<br><br>
+        List<List<string>> text,<br><br>
+        string phraseBeginning,<br><br>
+        int wordsCount)<br><br>
+    {<br><br>
+        List<string> phrase = new List<string>();<br><br>
+        phraseBeginning = phraseBeginning.ToLower();<br><br>
+        foreach (string word in phraseBeginning.Split(' '))<br><br>
+            phrase.Add(word);<br><br>
+        var count = wordsCount + phrase.Count;<br><br>
+        var rnd = new Random();<br><br>
+        while (phrase.Count < count)<br><br>
+        {<br><br>
+            var prequel = "";<br><br>
+            if (phrase.Count > 1)<br><br>
+                prequel = phrase[phrase.Count - 2];<br><br>
+            var moment = phrase[phrase.Count - 1];<br><br>
+<br><br>
+            int newRnd = rnd.Next(1, 11);<br><br>
+            if (phrase.Count == count - 1)<br><br>
+            {<br><br>
+                if (lastWords.ContainsKey(moment))<br><br>
+                {<br><br>
+                    int forPoint = rnd.Next(lastWords[moment].Length);<br><br>
+                    phrase.Add(lastWords[moment][forPoint] + "..");<br><br>
+                }<br><br>
+                else<br><br>
+                {<br><br>
+                    if (nextWords.ContainsKey(prequel + " " + moment))<br><br>
+                    {<br><br>
+                        newRnd = rnd.Next(nextWords[prequel + " " + moment].Count);<br><br>
+                        phrase.Add(nextWords[prequel + " " + moment][newRnd]);<br><br>
+                        count++;<br><br>
+                    }<br><br>
+                    else if (nextWords.ContainsKey(moment))<br><br>
+                    {<br><br>
+                        newRnd = rnd.Next(nextWords[moment].Count);<br><br>
+                        phrase.Add(nextWords[moment][newRnd]);<br><br>
+                        count++;<br><br>
+                    }<br><br>
+                    else<br><br>
+                    {<br><br>
+                        phrase[phrase.Count - 1] = moment + "..";<br><br>
+                        count--;<br><br>
+                    }<br><br>
+                }<br><br>
+            }<br><br>
+            else if ((newRnd == 1 || newRnd == 2 || newRnd == 3 || newRnd == 4) && lastWords.ContainsKey(prequel) && Contains(lastWords[prequel], moment))<br><br>
+            {<br><br>
+                phrase[phrase.Count - 1] = moment + "..";<br><br>
+                if (nextSent.ContainsKey(moment))<br><br>
+                {<br><br>
+                    newRnd = rnd.Next(nextSent[moment].Length);<br><br>
+                    var begining = nextSent[moment][newRnd];<br><br>
+                    phrase.Add(begining);<br><br>
+                }<br><br>
+                else<br><br>
+                {<br><br>
+                    var begining = RandFirstWord(text);<br><br>
+                    phrase.Add(begining);<br><br>
+                }<br><br>
+            }<br><br>
+            else if (nextWords.ContainsKey(prequel + " " + moment))<br><br>
+            {<br><br>
+                newRnd = rnd.Next(nextWords[prequel + " " + moment].Count);<br><br>
+                phrase.Add(nextWords[prequel + " " + moment][newRnd]);<br><br>
+            }<br><br>
+            else if (nextWords.ContainsKey(moment))<br><br>
+            {<br><br>
+                newRnd = rnd.Next(nextWords[moment].Count);<br><br>
+                phrase.Add(nextWords[moment][newRnd]);<br><br>
+            }<br><br>
+            else<br><br>
+            {<br><br>
+                phrase[phrase.Count - 1] = moment + "..";<br><br>
+                if (nextSent.ContainsKey(moment))<br><br>
+                {<br><br>
+                    newRnd = rnd.Next(nextSent[moment].Length);<br><br>
+                    var begining = nextSent[moment][newRnd];<br><br>
+                    phrase.Add(begining);<br><br>
+                }<br><br>
+                else<br><br>
+                {<br><br>
+                    var begining = RandFirstWord(text);<br><br>
+                    phrase.Add(begining);<br><br>
+                }<br><br>
+            }<br><br>
+        }<br><br>
+<br><br>
+        StringBuilder result = new StringBuilder();<br><br>
+        foreach (string word in phrase)<br><br>
+        {<br><br>
+            result.Append(word);<br><br>
+            result.Append(" ");<br><br>
+        }<br><br>
+<br><br>
+        return result.ToString().Trim();<br><br>
+    }<br><br>
+<br><br>
+    public static bool Contains(string[] array, string value)<br><br>
+    {<br><br>
+        foreach (string word in array)<br><br>
+        {<br><br>
+            if (word == value) return true;<br><br>
+        }<br><br>
+        return false;<br><br>
+    }<br><br>
+<br><br>
+    public static string RandFirstWord(List<List<string>> text)<br><br>
+    {<br><br>
+        var rnd = new Random();<br><br>
+        int r = rnd.Next(0, text.Count);<br><br>
+        if (text.Count != 0)<br><br>
+            return text[r][0];<br><br>
+        else<br><br>
+            return null;<br><br>
+    }<br><br>
+}<br><br>
+
+</body>
+</html>
